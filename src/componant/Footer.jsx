@@ -17,7 +17,7 @@ const Footer = () => {
        <>
 
        { foot1 &&
-           <Flex lineHeight={"35px"} paddingTop="80px" style={{border: "outset"}} >
+           <Flex  lineHeight={"35px"} paddingTop="80px" style={{border: "outset"}} >
              <Spacer/>
             <Box >
             <Image w="32%" src="https://assets-global.website-files.com/5d03b4e130118314af624b20/5fc4feea074f5b86a6c62285_freshly-logo-R.svg" alt="image" />
@@ -59,7 +59,7 @@ const Footer = () => {
         </Flex>
         }
         {
-            !foot1 &&  <Box style={{border: "outset"}} w="100%" lineHeight={"35px"}  paddingLeft={["7%","20%"]} paddingRight={["7%","20%"]} >
+            !foot1 &&  <Box  style={{border: "outset"}} w="100%" lineHeight={"35px"}  paddingLeft={["7%","20%"]} paddingRight={["7%","20%"]} >
                 <SimpleGrid    columns={[3,4]} spacing='2%'>
                 <Text>FAQs</Text>
                 <Text>Blog</Text>
