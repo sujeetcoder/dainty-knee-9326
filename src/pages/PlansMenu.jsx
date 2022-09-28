@@ -1,29 +1,18 @@
-import { Box, Button, Container, Flex, Image, Input ,SimpleGrid,Spacer,Text} from "@chakra-ui/react"
-import ImgDes from "../componant/ImgDes"
-import OntheMenu from "../componant/OntheMenu"
-import homeTop from "../img/homeTop.png"
+import { Box, Button, Container, Image, SimpleGrid, Text } from "@chakra-ui/react"
+import { Link } from "react-router-dom";
+import "../App.css"
+import ImgDes from "../componant/ImgDes";
+import ImgDes2 from "../componant/ImgDes2";
 
 
 
-const Home = ()=>{
+const PlansMenu = () => {
 
-    
 
-    
+
 
     return (
-        <Box textAlign="center" width={"100%"} >
-{/* first */}
-        <Box  width={"100%"} >
-        <Image w="100%" height="100%" src={homeTop} alt="home"></Image>
-        </Box>
-        {/* second */}
-
-        <Box bgColor={"#fef9eb"} >
-        <Text fontSize={["2xl","3xl","5xl"]} fontWeight="semibold" textAlign="center" >How it Works</Text>  
-            <ImgDes/>     
-        </Box>
-        <OntheMenu/>  
+        <Box textAlign="center" >
 
         <Image m="auto" src="https://assets-global.website-files.com/5d03b4e130118314af624b20/6192ce7669f68694a8b969af_Group%20(8).svg" alt="image" ></Image>
         <Text fontSize={["md","lg","2xl","6xl"]} textAlign="center" fontWeight="bold" >Flexible plans that fit your life</Text>
@@ -47,27 +36,33 @@ const Home = ()=>{
                 <Image src="https://assets-global.website-files.com/5d03b4e130118314af624b20/62fb492794414230d9d0e1be_10-11%20Meals-p-500.png" alt="reci" ></Image>
                 <Text fontSize={["2xl","4xl"]} color="#3d7e83" fontWeight="semibold">10-11 Meals</Text>
             </Box>
-            <Box marginBottom={["230px","80px","30px","30px"]} textAlign="center" >
+            <Box marginBottom={["250px","120px","100px","90px"]} textAlign="center" >
                 <Image src="https://assets-global.website-files.com/5d03b4e130118314af624b20/62fb4927a7912ad1a7770be8_12%20Meals-p-500.png" alt="reci" ></Image>
                 <Text fontSize={["2xl","4xl"]} color="#3d7e83" fontWeight="semibold" >12 Meals</Text>
             </Box>
         </SimpleGrid>
 
         <Text textAlign="center" >Shipping and tax added at checkout. Prices are rounded for your convenience.</Text>
-        <Button size="lg" bgColor="#3167ff" >Sign Up Now</Button>
+       <Link to={"/signup"} > <Button size="lg" bgColor="#3167ff" >Sign Up Now</Button> </Link>
 
-        
+        <Text mt="100px" fontSize="5xl">On the Menu</Text>
+        <Container  >
+        Whatever your lifestyle, Freshly’s got  you covered—with <u> gluten-free, dairy-free, plant-based, carb-smart, </u>and <u>calorie-conscious </u>meal options! Our heat-&-eat breakfasts, low-lift lunches, and done-for-you dinners provide an effortless alternative to everyday cooking, with nutritious prepared meals delivered fresh to your door. Explore this week’s dishes and start eating better:
+       </Container>
+
+       <Box bgColor={"#fffdf7"} >
+       <Text fontSize={["2xl","3xl","6xl"]}  fontWeight="semibold" >For Every Diet & Lifestyle</Text>
+       <Text w="55%" m="auto" >We’re here to make every dish delicious and nutritious, with prepared meals that satisfy a wide range of tastes—all meticulously crafted to meet your dietary wants and needs.</Text>
+
+        <ImgDes2/>
+
+       </Box>
 
 
 
-
-
-        {/* last */}
         </Box>
     )
+};
 
-       
-   
-}
 
-export default Home
+export default PlansMenu;
