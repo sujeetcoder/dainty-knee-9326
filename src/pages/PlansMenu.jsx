@@ -74,7 +74,7 @@ const PlansMenu = () => {
        {/* all items */}
        <SimpleGrid p="10%" columns={["1","1","2","3","4"]} gap="40px" >
         
-       { !tr && <Spinner size="xl" m="auto" ml="600px"  color='red.500' /> }
+       { !tr && <Spinner size="xl" m="auto"   color='red.500' /> }
             { tr && data.map((ele)=>{
                 const el = ele.recipe
                 return <BackdropExample key={el.label} title={el.label} des={el.source} img={el.image} >  <Box  > <Image borderRadius="20px" w="100%" h="80%" src={ el.image } alt="pic1" ></Image> <Text fontSize={["xl","2xl"]} >{ el.label }</Text>  </Box></BackdropExample>
