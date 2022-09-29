@@ -29,7 +29,7 @@ const OntheMenu = () => {
             </SimpleGrid>
 
             
-            <Link to={"/plansmenu"} >  <Button size="lg" style={{width:"90%",backgroundColor:"#3167ff",color:"white",marginLeft:"5%" }} mt={["240px","100px","80px","80px"]} >View Plans & Menu</Button>  </Link> 
+            <Link to={"/plansmenu"} >  <Button size="lg" style={{width:"90%",backgroundColor:"#3167ff",color:"white",marginLeft:"5%" }} mt={["340px","100px","80px","80px"]} >View Plans & Menu</Button>  </Link> 
         </Box>
       </Container>
     )

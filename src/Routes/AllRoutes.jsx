@@ -14,10 +14,10 @@ import PriveteRoute from "./PriveteRoute";
 const AllRoutes = ()=>{
     return (
         <Routes>
-            <Route path="/" element={ <PriveteRoute> <Home/> </PriveteRoute>} ></Route>
+            <Route path="/" element={ <Home/> } ></Route>
             <Route path="/login" element={ <Login/> } ></Route>
             <Route path="/signup" element={ <Signup/> } ></Route>
-            <Route path="/plansmenu" element={ <PlansMenu/> }></Route>
+            <Route path="/plansmenu" element={ <PriveteRoute> <PlansMenu/> </PriveteRoute> }></Route>
             <Route path="/howitwork" element={ <HowitWork/> } ></Route>
             <Route path="/gift" element={ <Gift/> } ></Route>
             <Route path="/help" element={ <Help/> } ></Route>

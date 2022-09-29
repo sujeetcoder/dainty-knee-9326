@@ -1,5 +1,5 @@
-import { Box, Flex, Spacer, Image, useMediaQuery, IconButton } from "@chakra-ui/react"
-import { Link } from "react-router-dom"
+import { Box, Flex, Spacer, Image, useMediaQuery, IconButton, Button } from "@chakra-ui/react"
+import { Link, useNavigate } from "react-router-dom"
 import {
     Menu,
     MenuButton,
@@ -9,10 +9,25 @@ import {
   } from '@chakra-ui/react'
 
   import {  HamburgerIcon } from '@chakra-ui/icons'
+import { useContext } from "react"
+import { AuthContext } from "../context/AppContext"
 
 
 const Navbar = () => {
     const [navSmall] = useMediaQuery('(min-width: 800px)')
+    const {isAuth,toggleAuth} = useContext(AuthContext)
+    const navigate = useNavigate()
+
+    function toggleClick(isAuth){
+        if(isAuth){
+          console.log(isAuth)
+         localStorage.setItem("login",false)
+            toggleAuth()
+          
+        } else {
+            navigate("/signup")
+        }
+    }
 
    
 
@@ -42,8 +57,8 @@ const Navbar = () => {
             <Spacer/>
 
             { navSmall &&  <Box  marginRight={"4%"} display='flex' alignItems='baseline' gap="15px">
-            <Link to={"/login"}>Login</Link>
-            <Link  style={{ backgroundColor: "#3167ff",color:"white",width:"90px",height:"35px",borderRadius:"0px",textAlign:"center", }} to={"/signup"} >Sign Up</Link>
+            <Link to={"/login"}> {!isAuth?"Login":"" } </Link>
+            <Button onClick={()=>toggleClick(isAuth)} style={{ backgroundColor: "#3167ff",color:"white",borderRadius:"5px",textAlign:"center"}}> {!isAuth?"Sign Up":"Log Out" } </Button> 
             </Box>
             
             }
@@ -60,9 +75,9 @@ const Navbar = () => {
               <MenuItem><Link to={"/howitwork"} >How it Works</Link></MenuItem>
               <MenuItem><Link to={"/gift"} >Gift</Link></MenuItem>
               <MenuItem><Link  >Refer a Friend</Link></MenuItem>
-              <MenuItem>  <Link to={"/help"} >Help</Link></MenuItem>
-              <MenuItem><Link to={"/login"}>Login</Link></MenuItem>
-              <MenuItem> <Link  style={{ backgroundColor: "#3167ff",color:"white",width:"90px",height:"35px",borderRadius:"0px",textAlign:"center", }} to={"/signup"} >Sign Up</Link></MenuItem>
+              <MenuItem> <Link to={"/help"} >Help</Link></MenuItem>
+              <MenuItem><Link to={"/login"}> {!isAuth?"Login":"" } </Link></MenuItem>
+              <MenuItem onClick={()=>toggleClick(isAuth)} style={{ backgroundColor: "#3167ff",color:"white",borderRadius:"5px",textAlign:"center",width:"40%"}}> {!isAuth?"Sign Up":"Log Out" } </MenuItem>
             </MenuList>
           </Menu>
 
