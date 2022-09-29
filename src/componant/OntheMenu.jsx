@@ -4,6 +4,7 @@ import "../App.css"
 
 import firstData from "../compData/firstData";
 import FirstData from "./FirstData";
+import { Link } from "react-router-dom";
 
 
 const OntheMenu = () => {
@@ -28,7 +29,7 @@ const OntheMenu = () => {
             </SimpleGrid>
 
             
-                <Button size="lg" style={{width:"90%",backgroundColor:"#3167ff",color:"white",marginLeft:"5%" }} mt={["240px","100px","80px","80px"]} >View Plans & Menu</Button>  
+            <Link to={"/plansmenu"} >  <Button size="lg" style={{width:"90%",backgroundColor:"#3167ff",color:"white",marginLeft:"5%" }} mt={["240px","100px","80px","80px"]} >View Plans & Menu</Button>  </Link> 
         </Box>
       </Container>
     )

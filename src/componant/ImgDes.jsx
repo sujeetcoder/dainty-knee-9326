@@ -8,7 +8,7 @@ const ImgDes = () => {
 
 
     return (
-        <SimpleGrid columns={[1,2,2,2,4]} spacing='2%'  justify="space-around" w="80%"  m="auto" >
+        <SimpleGrid columns={[1,2,2,2,4]} spacing={["0%","-40px","-1%",'-2%',"2%"]}  justify="space-around" w="80%"  m="auto" >
         <Box  lineHeight="60px" textAlign="center"  >
         <Image w="100%" h="30%"  src="https://uploads-ssl.webflow.com/5d03b4e130118314af624b20/62b0b19dbc5f55c4206158f7_choose-your-meals%20(1).svg" alt="pic" ></Image>
         <Text  fontSize='2xl' lineHeight={["base","base","base","base","60px"]} > Choose Your Meals </Text>

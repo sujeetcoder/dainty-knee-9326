@@ -32,10 +32,10 @@ const Navbar = () => {
 
            { navSmall && <Box display="flex" alignItems='baseline' gap="15px">
                 <Link to={"/plansmenu"} >Plans & Menu</Link>
-                <Link to={"/login"} >How it Works</Link>
-                <Link to={"/login"} >Gift</Link>
-                <Link to={"/login"} >Refer a Friend</Link>
-                <Link to={"/cart"} >Help</Link>
+                <Link to={"/howitwork"} >How it Works</Link>
+                <Link to={"/gift"} >Gift</Link>
+                <Link  >Refer a Friend</Link>
+                <Link to={"/help"} >Help</Link>
             
             </Box>
             }
@@ -57,10 +57,10 @@ const Navbar = () => {
               />
             <MenuList>
               <MenuItem> <Link to={"/plansmenu"} >Plans & Menu</Link></MenuItem>
-              <MenuItem><Link to={"/login"} >How it Works</Link></MenuItem>
-              <MenuItem><Link to={"/login"} >Gift</Link></MenuItem>
-              <MenuItem><Link to={"/login"} >Refer a Friend</Link></MenuItem>
-              <MenuItem>  <Link to={"/cart"} >Help</Link></MenuItem>
+              <MenuItem><Link to={"/howitwork"} >How it Works</Link></MenuItem>
+              <MenuItem><Link to={"/gift"} >Gift</Link></MenuItem>
+              <MenuItem><Link  >Refer a Friend</Link></MenuItem>
+              <MenuItem>  <Link to={"/help"} >Help</Link></MenuItem>
               <MenuItem><Link to={"/login"}>Login</Link></MenuItem>
               <MenuItem> <Link  style={{ backgroundColor: "#3167ff",color:"white",width:"90px",height:"35px",borderRadius:"0px",textAlign:"center", }} to={"/signup"} >Sign Up</Link></MenuItem>
             </MenuList>
