@@ -1,4 +1,4 @@
-import { Box, Flex, Spacer, Image, useMediaQuery, IconButton, Button } from "@chakra-ui/react"
+import { Box, Flex, Spacer, Image, useMediaQuery, IconButton, Button, SimpleGrid } from "@chakra-ui/react"
 import { Link, useNavigate } from "react-router-dom"
 import {
     Menu,
@@ -36,7 +36,7 @@ const Navbar = () => {
         <Link to={"/"} >
         <Image w="4%" margin="auto" marginTop="12px" src="https://assets-global.website-files.com/5d03b4e130118314af624b20/5fc4feea074f5b86a6c62285_freshly-logo-R.svg" alt="image" />
         </Link>
-        <Flex   style={{fontWeight: "500"}} /* pos="sticky"  w="full" h="70px" top="0px" */ paddingTop={"17px"} bgColor={"#fffdf7"}  >
+        <Flex pos="sticky" zIndex="50" top="0px" style={{fontWeight: "500"}}  paddingTop={"17px"} bgColor={"#fffdf7"} gap='2'  >
             
             <Box  marginLeft={"4%"}>
             <Link to={"/"} >

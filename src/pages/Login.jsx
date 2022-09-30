@@ -1,6 +1,7 @@
 import { Box, FormControl, FormLabel, Input, Text } from "@chakra-ui/react"
 import { useContext, useState } from "react"
 import { Link, Navigate, useNavigate } from "react-router-dom"
+import CommonQ from "../componant/CommonQ"
 import { AuthContext } from "../context/AppContext"
 
 const initData = {
@@ -46,6 +47,7 @@ const Login = () => {
 
 
     return (
+      <>
         <Box bgColor="#fffdf7" padding="10px 30%" >
             <Box>
             <Text fontSize="5xl" textAlign="center"><b>Log In </b></Text>
@@ -58,7 +60,11 @@ const Login = () => {
             </FormControl>
             </Box>
             <Text mt="25px" textAlign="end" > Don’t have an account?<Link to={"/signup"} ><u> Get Started </u> </Link> </Text>
+
+            <br/>
         </Box>
+            <CommonQ/>
+            </>
     )
 }
 
