@@ -1,6 +1,6 @@
 import { Box, FormControl, FormLabel, Input, Text } from "@chakra-ui/react"
 import { useContext, useState } from "react"
-import { Link, useNavigate } from "react-router-dom"
+import { Link, Navigate, useNavigate } from "react-router-dom"
 import { AuthContext } from "../context/AppContext"
 
 const initData = {
@@ -14,6 +14,10 @@ const Login = () => {
     const {email,zip} = user
     const navigate = useNavigate()
     const {isAuth,toggleAuth} = useContext(AuthContext)
+
+    if(isAuth){
+      return <Navigate to={"/"}/>
+    }
 
    
     function changeUser(e){
@@ -31,7 +35,7 @@ const Login = () => {
         navigate("/plansmenu")
         
       } else {
-        alert("wrong")
+        alert("Wrong credential")
         console.log(login)
         console.log(user)
       }

@@ -15,7 +15,7 @@ const Footer = () => {
     return (
         
        <>
-
+        
        { foot1 &&
            <Flex mt="60px"  lineHeight={"35px"} paddingTop="80px" style={{border: "outset"}} >
              <Spacer/>
