@@ -4,6 +4,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "../App.css"
+import CommonQ from "../componant/CommonQ";
 import ImgDes from "../componant/ImgDes";
 import ImgDes2 from "../componant/ImgDes2";
 import BackdropExample from "../func/modal1";
@@ -20,8 +21,14 @@ const PlansMenu = () => {
     }
     async function dd(){
         let ndata = await  getData("https://api.edamam.com/search?q=burger&app_id=4e9f05eb&app_key=9b904d703fa0d46a88ce1ac63f29f498")
-        console.log(ndata.data.hits)
-        setData(ndata.data.hits)
+        let ndata2 = await getData("https://api.edamam.com/search?q=pizza&app_id=4e9f05eb&app_key=9b904d703fa0d46a88ce1ac63f29f498")
+        let ndata3 = await getData("https://api.edamam.com/search?q=idli&app_id=4e9f05eb&app_key=9b904d703fa0d46a88ce1ac63f29f498")
+       /*  let ndata4 = await getData("https://api.edamam.com/search?q=idli&app_id=4e9f05eb&app_key=9b904d703fa0d46a88ce1ac63f29f498") */
+       /*  let ndata3 = await getData */
+        
+        let allData =  [...ndata?.data?.hits,...ndata2?.data?.hits,...ndata3?.data?.hits]
+        console.log(allData)
+        setData(allData)
         setTimeout(() => {
             setTr(true)
         }, 1500);
@@ -29,7 +36,7 @@ const PlansMenu = () => {
     }
 
     useEffect(()=>{
-       dd()
+      dd()
     },[])
     
 
@@ -94,18 +101,9 @@ const PlansMenu = () => {
         <ImgDes2/>
 
        </Box>
-
-       <br/>
-       <br/>
-       <br/>
-       <Text fontSize={["xl","2xl","5xl"]} >Common Questions</Text>
-       <Box w="75%" m="auto" >
-        {/* menu */}
-        
-        {/* menu */}
-
-       <Divider />
-       </Box>
+            <CommonQ/>
+      
+       
 
 
 
