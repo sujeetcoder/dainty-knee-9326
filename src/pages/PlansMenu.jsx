@@ -1,5 +1,5 @@
 import { ChevronDownIcon } from "@chakra-ui/icons";
-import { Box, Button, Container, Divider, Image, Menu, MenuButton, MenuItem, MenuList, SimpleGrid, Spinner, Text } from "@chakra-ui/react"
+import { Box, Button, Container, Divider, Flex, Image, Menu, MenuButton, MenuItem, MenuList, Select, SimpleGrid, Spinner, Text } from "@chakra-ui/react"
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
@@ -20,6 +20,7 @@ const PlansMenu = () => {
         return axios.get(url)
     }
     async function dd(){
+        setTr(false)
         let ndata = await  getData("https://api.edamam.com/search?q=burger&app_id=4e9f05eb&app_key=9b904d703fa0d46a88ce1ac63f29f498")
         let ndata2 = await getData("https://api.edamam.com/search?q=pizza&app_id=4e9f05eb&app_key=9b904d703fa0d46a88ce1ac63f29f498")
         let ndata3 = await getData("https://api.edamam.com/search?q=idli&app_id=4e9f05eb&app_key=9b904d703fa0d46a88ce1ac63f29f498")
@@ -38,6 +39,23 @@ const PlansMenu = () => {
     useEffect(()=>{
       dd()
     },[])
+
+
+    async function filterData(e){
+        setTr(false)
+        let q = e.target.value
+        if(q=="all"){
+            dd()
+        } else {
+        let fData = await axios.get(`https://api.edamam.com/search?q=${q}&app_id=4e9f05eb&app_key=9b904d703fa0d46a88ce1ac63f29f498`)
+        let nnData = fData?.data?.hits
+        // console.log(nnData)
+        setData(nnData)
+        }
+        setTimeout(() => {
+            setTr(true)
+        }, 1500);
+    }
     
 
    
@@ -78,6 +96,20 @@ const PlansMenu = () => {
 
         <Text textAlign="center" >Shipping and tax added at checkout. Prices are rounded for your convenience.</Text>
        <Link to={"/signup"} > <Button mt="30px" size="lg" color="white" bgColor="#3167ff" >Get Started</Button> </Link>
+        <Text mt="100px" fontSize="5xl">On the Menu</Text>
+        <Container mb="80px"  >
+        Whatever your lifestyle, Freshly’s got  you covered—with <u> gluten-free, dairy-free, plant-based, carb-smart, </u>and <u>calorie-conscious </u>meal options! Our heat-&-eat breakfasts, low-lift lunches, and done-for-you dinners provide an effortless alternative to everyday cooking, with nutritious prepared meals delivered fresh to your door. Explore this week’s dishes and start eating better:
+       </Container>
+
+       <Flex  w="20%" m="auto" >
+        <Text w="40%" >Men-Category</Text>
+        <Select onChange={(e)=>filterData(e)} w="50%" /* placeholder='All Meals' */ size='xs'>
+          <option value='all'>All Meals</option>
+          <option value='burger'>Burger</option>
+          <option value='pizza'>Pizza</option>
+          <option value='idli'>Idli</option>
+        </Select>
+       </Flex>
        {/* all items */}
        <SimpleGrid p="10%" columns={["1","1","2","3","4"]} gap="40px" >
         
@@ -89,10 +121,6 @@ const PlansMenu = () => {
        </SimpleGrid>
        
 
-        <Text mt="100px" fontSize="5xl">On the Menu</Text>
-        <Container  >
-        Whatever your lifestyle, Freshly’s got  you covered—with <u> gluten-free, dairy-free, plant-based, carb-smart, </u>and <u>calorie-conscious </u>meal options! Our heat-&-eat breakfasts, low-lift lunches, and done-for-you dinners provide an effortless alternative to everyday cooking, with nutritious prepared meals delivered fresh to your door. Explore this week’s dishes and start eating better:
-       </Container>
 
        <Box lineHeight="120px" bgColor={"#fffdf7"} >
        <Text  fontSize={["2xl","3xl","6xl"]}  fontWeight="semibold" >For Every Diet & Lifestyle</Text>
@@ -105,7 +133,7 @@ const PlansMenu = () => {
       
        
 
-
+            
 
         </Box>
     )

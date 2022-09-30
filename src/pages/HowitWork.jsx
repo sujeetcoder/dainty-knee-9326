@@ -1,4 +1,5 @@
-import { Box, Button, Image, SimpleGrid, Text } from "@chakra-ui/react"
+import { AspectRatio, Box, Button, Image, SimpleGrid, Text } from "@chakra-ui/react"
+import CommonQ from "../componant/CommonQ.jsx"
 
 
 
@@ -12,7 +13,13 @@ const HowitWork = () => {
            <Text mb="40px" >See just how easy it is to prepare a chef-cooked Freshly meal</Text>
 
            {/* embed */}
-         <Box  w="62%" h={["100px","150px","240px","400px","600px"]} m="auto" >  <iframe allowtransparency="true" title="Wistia video player" allowFullscreen frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" src="https://fast.wistia.net/embed/iframe/llltuzvd35" width="100%" height="100%"></iframe> </Box>
+         <Box  w="62%" h={["100px","150px","240px","400px","600px"]} m="auto" > <AspectRatio   width="100%" height="100%">
+  <iframe
+    title='naruto'
+    src="https://fast.wistia.net/embed/iframe/llltuzvd35"
+    allowFullScreen
+  />
+</AspectRatio> </Box>
            {/*embed */}
 
            <Text mt="120px" fontSize={["xl","2xl","2xl","3xl","4xl"]} > <b> Our Food Philosophy </b></Text>
@@ -37,6 +44,9 @@ const HowitWork = () => {
         </SimpleGrid>
 
         <Button mt={["160px","150px",]} bgColor="#3167ff" >Learn More</Button> <br/>
+
+        <CommonQ/>
+        
 
 
 
