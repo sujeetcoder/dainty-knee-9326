@@ -1,3 +1,83 @@
+<!-- About this App -->
+<!-- Start -->
+# Project name is Freshly.com
+# This is a food item selling website
+
+### this site is Fully responsive
+`For defrent screens it has different UI`
+# for testing all features of this site you are requested to sign-up and login with you own credentials on this site
+Use Email and password for login
+
+first you visit on [homepage](http://localhost:3000)
+there you will see some products.
+`Some review are present on homepage and there are two buttons you can click on them for looking on next review `
+once you reach last review thet button will be disabled
+
+<!-- Functionality -->
+You can't access `plans & menu` without login
+1- in `sign-up` page you will able to sing-up with your email and password
+2- if you try to sign-up with empty input field it will alert you `empty input not allow`
+3- once you sign-up successfully it will redirect you to login page `&` and if you again try to sign-up with same email it will say you `user allready exist` and it redirect you to login page
+4- if you login with wrong credentials it will alert you `wrong credential`
+5- once you login successefully the `login` button in navbar will be not longer exist and sign-up button will changed to `log-out`
+6- And once successfull login user will no longer access `login` & `sign-up` pages form `URL` also they can't access
+7- once user login successefully they will redirect to `plans and menu` page
+8- there you will see multiple type products
+9- a `filter` button is there with three caregories if you want to see spacific products you can see them.
+10- there also a all items filter avalable if user again want to see all products they can use this option
+11- when user changing filter option there a `spiner` loading indicator will showing once product successefully fetch from `API` loading indicater will gone and product will be showing
+# Once user login successfully the user will remain in the login state until he logout himself
+
+13- when user will click on `log-out` button the `log-out` button will changed to `sign-up` and `login` button come again and user will get `log-out state`
+
+<!-- End -->
+# Name- Sujeet Kumar
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

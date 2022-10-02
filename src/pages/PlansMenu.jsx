@@ -101,7 +101,7 @@ const PlansMenu = () => {
         Whatever your lifestyle, Freshly’s got  you covered—with <u> gluten-free, dairy-free, plant-based, carb-smart, </u>and <u>calorie-conscious </u>meal options! Our heat-&-eat breakfasts, low-lift lunches, and done-for-you dinners provide an effortless alternative to everyday cooking, with nutritious prepared meals delivered fresh to your door. Explore this week’s dishes and start eating better:
        </Container>
 
-       <Flex  w="20%" m="auto" >
+       <Flex  w={["90%","80%","50%","30%","20%"]} m="auto" >
         <Text w="40%" >Men-Category</Text>
         <Select onChange={(e)=>filterData(e)} w="50%" /* placeholder='All Meals' */ size='xs'>
           <option value='all'>All Meals</option>
@@ -111,9 +111,10 @@ const PlansMenu = () => {
         </Select>
        </Flex>
        {/* all items */}
+       { !tr && <Spinner size="xl" m="auto" mt="110px"  color='red.500' /> }
        <SimpleGrid p="10%" columns={["1","1","2","3","4"]} gap="40px" >
         
-       { !tr && <Spinner size="xl" m="auto"   color='red.500' /> }
+       
             { tr && data.map((ele)=>{
                 const el = ele.recipe
                 return <BackdropExample key={el.label} title={el.label} des={el.source} img={el.image} >  <Box  > <Image borderRadius="20px" w="100%" h="80%" src={ el.image } alt="pic1" ></Image> <Text fontSize={["xl","2xl"]} >{ el.label }</Text>  </Box></BackdropExample>
