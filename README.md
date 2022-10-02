@@ -15,7 +15,7 @@ once you reach last review thet button will be disabled
 
 <!-- Functionality -->
 You can't access `plans & menu` without login
-1- in `sign-up` page you will able to sing-up with your email and password
+1- in `sign-up` page you will able to sing-up with your email and password <br/>
 2- if you try to sign-up with empty input field it will alert you `empty input not allow`
 3- once you sign-up successfully it will redirect you to login page `&` and if you again try to sign-up with same email it will say you `user allready exist` and it redirect you to login page
 4- if you login with wrong credentials it will alert you `wrong credential`
