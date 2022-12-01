@@ -8,7 +8,7 @@
 # for testing all features of this site you are requested to sign-up and login with you own credentials on this site
 Use Email and password for login
 
-first you visit on [homepage](http://localhost:3000)
+first you visit on [homepage](https://delightful-dango-efae26.netlify.app/)
 there you will see some products. <br/>
 `Some review are present on homepage and there are two buttons you can click on them for looking on next review ` <br/>
 once you reach last review thet button will be disabled <br/>
