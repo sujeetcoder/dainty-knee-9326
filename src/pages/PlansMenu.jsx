@@ -64,6 +64,10 @@ const PlansMenu = () => {
 
 
     return (
+        <>
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2610029593731373"
+     crossorigin="anonymous"></script>
+       
         <Box mt="100px" textAlign="center" >
 
         <Image  m="auto" src="https://assets-global.website-files.com/5d03b4e130118314af624b20/6192ce7669f68694a8b969af_Group%20(8).svg" alt="image" ></Image>
@@ -137,6 +141,7 @@ const PlansMenu = () => {
             
 
         </Box>
+             </>
     )
 };
 
