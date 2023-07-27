@@ -8,6 +8,10 @@ import { Link } from 'react-router-dom';
 
 function App() {
   return (
+    <>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2610029593731373"
+     crossorigin="anonymous"></script>
+    
     <Box  className="App">
 
     <Link to={"/help"} >
@@ -18,6 +22,7 @@ function App() {
      <AllRoutes/>
      <Footer/>
     </Box>
+  </>
   );
 }
 
